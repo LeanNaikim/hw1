@@ -20,13 +20,11 @@ public class Worker {
 
     public void workerInput(Scanner input) {
         id = Integer.parseInt(validateNumber("Enter Worker ID:" ,input , "[0-9]+"));
-        name = validateNumber("Enter Worker Name: ",input,"[a-zA_Z]+");
+        name = validateLetter("Enter Worker Name: ",input,"[a-zA_Z]+");
         gender = validateGender("Enter Worker Gender: ",input,"[/(?:m|M|male|Male|f|F|female|Female|FEMALE|MALE)$]+");
-        position = validateNumber("Enter Worker Position: ",input,"[a-zA_Z]+");
-        System.out.print("Enter Worker Hours: ");
-        hours = input.nextFloat();
-        System.out.print("Enter Worker Rate: ");
-        rate = input.nextFloat();
+        position = validateLetter("Enter Worker Position: ",input,"[a-zA_Z]+");
+        hours = Float.parseFloat(validateNumber("Enter Worker Hours:" ,input , "[0-9]+"));
+        rate = Float.parseFloat(validateNumber("Enter Worker Rate:" ,input , "[0-9]+"));
     }
 
     public void workerInfo() {
